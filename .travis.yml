@@ -3,10 +3,10 @@ services:
   - docker
 
 before_install:
-  - docker build -t vibhanshu909/react-test -f ./client/Dockerfile.dev ./client
+  - docker build -t react-test -f ./client/Dockerfile.dev ./client
 
 scripts:
-  - docker run vibhanshu909/react-test npm test -- --coverage
+  - docker run react-test npm test -- --coverage
 
 after_success:
   - docker build -t vibhanshu909/multi-client ./client
